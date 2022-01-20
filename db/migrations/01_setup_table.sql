@@ -1,0 +1,1 @@
+CREATE TABLE messages(id SERIAL PRIMARY KEY, author VARCHAR(60), message VARCHAR(300), date VARCHAR(30));
