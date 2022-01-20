@@ -2,6 +2,7 @@
 
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/message'
 
 # class runs a web-message-board as a sinatra application
 class MessageBoard < Sinatra::Base
@@ -10,6 +11,7 @@ class MessageBoard < Sinatra::Base
   end
 
   get '/' do
+    @messages = Message.all
     erb(:message_board)
   end
 

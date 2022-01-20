@@ -17,8 +17,12 @@
 
 <div>
   <ul>
+    <% @messages.each do |message| %>
     <li>
-      Jason: I will get you Freddy!!!  
+      <%= "#{message.name} @(#{message.date})"%><br>
+      <%= message.message %>
     </li>
+    <br>
+    <% end %>
   </ul>
 </div>
