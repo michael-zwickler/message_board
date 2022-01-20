@@ -10,7 +10,12 @@ class MessageBoard < Sinatra::Base
   end
 
   get '/' do
-    'Hello World'
+    erb(:message_board)
+  end
+
+  post '/message_board' do
+    Message.add_message(name: params[:name], message: params[:message])
+    redirect('/')
   end
 
   run! if app_file == $0
